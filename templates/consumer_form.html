@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<script src="{{ url_for('static', filename='js/states_districts.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center mb-0">Consumer Registration Form</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            {{ form.first_name.label(class="form-label") }}
+                            {{ form.first_name(class="form-control" + (" is-invalid" if form.first_name.errors else "")) }}
+                            {% if form.first_name.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.first_name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form.last_name.label(class="form-label") }}
+                            {{ form.last_name(class="form-control" + (" is-invalid" if form.last_name.errors else "")) }}
+                            {% if form.last_name.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.last_name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-2">
+                        <div class="col-12 col-md-6">
+                            {{ form.mobile.label(class="form-label") }}
+                            {{ form.mobile(class="form-control" + (" is-invalid" if form.mobile.errors else ""), placeholder="Enter 10 digit mobile number") }}
+                            {% if form.mobile.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.mobile.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form.email.label(class="form-label") }}
+                            {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else ""), placeholder="Enter email address") }}
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        {{ form.address.label(class="form-label") }}
+                        {{ form.address(class="form-control" + (" is-invalid" if form.address.errors else ""), placeholder="Enter complete address") }}
+                        {% if form.address.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.address.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="row g-3 mt-2">
+                        <div class="col-12 col-md-6">
+                            {{ form.block.label(class="form-label") }}
+                            {{ form.block(class="form-control" + (" is-invalid" if form.block.errors else ""), placeholder="Enter block name") }}
+                            {% if form.block.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.block.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form.state.label(class="form-label") }}
+                            <select name="state" id="state" class="form-control{{ ' is-invalid' if form.state.errors }}" aria-label="Select State">
+                                <option value="">Select State</option>
+                            </select>
+                            {% if form.state.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.state.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-2">
+                        <div class="col-12 col-md-6">
+                            {{ form.district.label(class="form-label") }}
+                            <select name="district" id="district" class="form-control{{ ' is-invalid' if form.district.errors }}" aria-label="Select District">
+                                <option value="">Select District</option>
+                            </select>
+                            {% if form.district.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.district.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form.pin_code.label(class="form-label") }}
+                            {{ form.pin_code(class="form-control" + (" is-invalid" if form.pin_code.errors else ""), placeholder="Enter 6 digit PIN code") }}
+                            {% if form.pin_code.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.pin_code.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        {{ form.ca_number.label(class="form-label") }}
+                        {{ form.ca_number(class="form-control" + (" is-invalid" if form.ca_number.errors else ""), placeholder="Enter CA number") }}
+                        {% if form.ca_number.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.ca_number.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

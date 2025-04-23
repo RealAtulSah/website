@@ -1,0 +1,74 @@
+/* Footer styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+/* Card responsiveness */
+.card {
+    margin-bottom: 80px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Navbar styling */
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar {
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Form responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card {
+        margin: 10px;
+        margin-bottom: 80px;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    /* Adjust form spacing on mobile */
+    .form-control {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Make buttons full width on mobile */
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Improve form field spacing */
+.form-label {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+}
+
+/* Improve select dropdowns on mobile */
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23343a40' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px 12px;
+    padding-right: 2rem;
+}
